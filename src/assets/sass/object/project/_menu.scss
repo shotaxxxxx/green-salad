@@ -1,0 +1,418 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Menu
+*/
+.p-menu {
+  position: relative;
+  padding: 24px 0;
+  background-color: $base-color;
+
+  @include mq(lg) {
+    padding: 72px 0;
+  }
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   z-index: 1;
+  //   top: 50%;
+  //   left: 50%;
+  //   width: 91.4667%;
+  //   height: 98%;
+  //   transform: translate(-50%, -50%);
+  //   border: 1px solid $primary-text-color;
+  // }
+
+  &__inner {
+    width: 91.4667%;
+    margin: 0 auto;
+    padding: 32px 0;
+    border: 1px solid $primary-text-color;
+
+    @include mq(lg) {
+      padding: 80px 0 112px;
+    }
+
+    @include mq(xxl) {
+      width: 90%;
+    }
+  }
+
+  &__contents {
+    @include mq(md) {
+      width: 95%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 253px;
+    margin: 0 auto;
+    padding-top: 48px;
+
+    @include mq(lg) {
+      width: 284px;
+      padding-top: 32px;
+    }
+  }
+
+  &__item {
+    @include mq(lg) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__cards {
+    margin: 48px auto 0;
+
+    @include mq(lg) {
+      margin: 54px auto 0;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 48px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &.-row {
+      @include mq(md) {
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__cardBottom {
+    margin-top: 48px;
+
+    @include mq(md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      @include mq(lg) {
+        margin-top: 58px;
+      }
+    }
+
+    > .p-menu__card {
+      @include mq(md) {
+        width: 48%;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 3;
+    width: 300px;
+    margin: -45px auto 0;
+    padding: 10px;
+    background-color: $main-color;
+    color: $secondary-text-color;
+
+    @include mq(md) {
+      width: 100%;
+      margin: -45px 0 0;
+    }
+
+    @include mq(xl) {
+      margin: -70px 0 0;
+    }
+
+    &.-row {
+      @include mq(md) {
+        left: -30px;
+        width: 55%;
+        height: 302px;
+        margin: 0;
+      }
+
+      @include mq(lg) {
+        height: 367px;
+      }
+
+      @include mq(xxl) {
+        left: -60px;
+      }
+    }
+  }
+
+  &__content {
+    border: 1px solid $secondary-text-color;
+  }
+
+  &__recommend {
+    position: relative;
+    z-index: 3;
+    width: 211px;
+    margin: -11px auto 0;
+    padding: 36px 0 16px;
+    background-color: $accent-color;
+    color: $primary-text-color;
+
+    @include mq(md) {
+      padding: 8px 0;
+    }
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: 1.5rem;
+    }
+
+    > .-lead {
+      display: block;
+      font-family: $font-en-secondary;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+
+      @include mq(lg) {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  &__title {
+    padding-top: 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    text-align: center;
+
+    &.-row {
+      @include mq(xl) {
+        padding-top: 35px;
+      }
+    }
+
+    @include mq(lg) {
+      font-size: 1.875rem;
+    }
+
+    @include mq(xl) {
+      padding-top: 62px;
+    }
+  }
+
+  &__price {
+    padding-top: 16px;
+    font-family: $font-en;
+    font-size: 1.875rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: 2.5rem;
+    }
+
+    > .-icon {
+      display: inline-block;
+      font-size: 1.125rem;
+      font-weight: 400;
+
+      @include mq(lg) {
+        font-size: 1.5rem;
+      }
+    }
+
+    > .-tax {
+      display: inline-block;
+      font-family: $font-set-primary;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+
+      @include mq(lg) {
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 260px;
+    max-width: 440px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 42px;
+    font-size: 0.875rem;
+
+    @include mq(lg) {
+      justify-content: space-around;
+      width: auto;
+      font-size: 1.25rem;
+    }
+
+    @include mq(xl) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 3;
+    width: 341px;
+    margin: 0 auto;
+    text-align: center;
+
+    @include mq(md) {
+      width: 100%;
+    }
+
+    &.-reft {
+      @include mq(md) {
+        width: 95%;
+      }
+    }
+
+    &.-row {
+      @include mq(md) {
+        right: -30px;
+        width: 45%;
+      }
+    }
+  }
+}
+
+.p-sns {
+  margin-top: 48px;
+
+  @include mq(lg) {
+    margin-top: 80px;
+  }
+
+  &__wrapper {
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: $main-color;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
+  &__inner {
+    padding-bottom: 24px;
+    border: 1px solid $secondary-text-color;
+  }
+
+  &__label {
+    width: 185px;
+    margin: -11px auto 0;
+    padding: 13px 0;
+    background-color: $accent-color;
+    font-family: $font-en;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text {
+    position: relative;
+    width: 85%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 24px;
+    color: $secondary-text-color;
+    line-height: 1.4375;
+
+    @include mq(md) {
+      text-align: center;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        width: 30px;
+        height: 1px;
+        background-color: $secondary-text-color;
+      }
+
+      &::before {
+        left: 5px;
+        transform: rotate(60deg);
+      }
+
+      &::after {
+        right: 5px;
+        transform: rotate(-60deg);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 9px;
+    padding-top: 24px;
+
+    @include mq(xl) {
+      max-width: 972px;
+      margin: 0 auto;
+    }
+  }
+
+  &__image {
+    width: calc((100% - 10px) / 2);
+
+    @include mq(md) {
+      width: calc(25% - 16px * 3 / 4);
+    }
+
+    &:nth-of-type(n + 3) {
+      margin-top: 10px;
+
+      @include mq(md) {
+        margin-top: 0;
+      }
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__id {
+    padding-top: 8px;
+    color: $secondary-text-color;
+    text-align: center;
+  }
+
+  &__button {
+    width: 260px;
+    margin: 0 auto;
+    margin-top: 24px;
+    border: 1px solid $secondary-text-color;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+}

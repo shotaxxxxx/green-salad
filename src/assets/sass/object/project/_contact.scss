@@ -1,0 +1,196 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Contact
+*/
+.p-contact {
+  padding: 64px 0;
+  background-image: url(../img/common/contact@2x.png);
+  background-position: center center;
+  background-size: cover;
+
+  @include mq(lg) {
+    padding: 90px 0;
+  }
+
+  @include mq(xl) {
+    padding: 130px 0;
+  }
+
+  &__wrapper {
+    width: 91.4667%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 16px;
+    background-color: $main-color;
+  }
+
+  &__text {
+    padding-top: 60px;
+    color: $secondary-text-color;
+    line-height: 1.4375;
+    text-align: center;
+  }
+
+  &__form {
+    max-width: 520px;
+    margin: 0 auto;
+    // padding-top: 30px;
+    color: $secondary-text-color;
+  }
+
+  &__def--tit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 32px;
+
+    > label {
+      line-height: 1;
+      @include mq(lg) {
+        font-size: 1.125rem;
+      }
+    }
+
+    > .-require {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      background-color: $accent-color;
+      color: $primary-text-color;
+      font-size: 0.75rem;
+      line-height: 1.4166;
+
+      @include mq(lg) {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  &__def--data {
+    input {
+      width: 100%;
+      margin-top: 6px;
+      padding: 14px 16px;
+      transition: border-color 0.2s cubic-bezier(0.42, 0, 0.03, 1.03), filter 0.2s cubic-bezier(0.42, 0, 0.03, 1.03);
+      border: 1px solid $base-color;
+      outline: none;
+
+      &:hover,
+      &:focus-visible {
+        border-color: $accent-color;
+        filter: drop-shadow(0 0 4px $accent-color);
+      }
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 6px;
+      padding: 13px 13px 13px 16px;
+      transition: border-color 0.2s cubic-bezier(0.42, 0, 0.03, 1.03), filter 0.2s cubic-bezier(0.42, 0, 0.03, 1.03);
+      border: 1px solid $base-color;
+      outline: none;
+
+      &:hover,
+      &:focus-visible {
+        border-color: $accent-color;
+        filter: drop-shadow(0 0 4px $accent-color);
+      }
+    }
+  }
+
+  &__check {
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+
+      + span {
+        display: inline-block;
+        position: relative;
+        padding-left: 43px;
+        cursor: pointer;
+
+        @include mq(lg) {
+          font-size: 1.125rem;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 30px;
+          height: 30px;
+          transform: translateY(-50%);
+          transition: border-color 0.2s cubic-bezier(0.42, 0, 0.03, 1.03), filter 0.2s cubic-bezier(0.42, 0, 0.03, 1.03);
+          border: 1px solid $base-color;
+        }
+
+        &::after {
+          content: "";
+          display: none;
+        }
+      }
+
+      &:hover {
+        + span {
+          &::before {
+            border-color: $accent-color;
+            filter: drop-shadow(0 0 4px $accent-color);
+          }
+        }
+      }
+
+      // &:active {
+      //   + span {
+      //     &::before {
+      //       background-color: rgba(21, 151, 65, 0.15);
+      //     }
+      //   }
+      // }
+
+      &:checked {
+        + span {
+          &::after {
+            display: block;
+            position: absolute;
+            bottom: 10px;
+            left: 5px;
+            width: 20px;
+            height: 9px;
+            transform: rotate(-45deg);
+            border-bottom: 2px solid $accent-color;
+            border-left: 2px solid $accent-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    transition: opacity 0.3s ease-in-out;
+    border: none;
+    outline: none;
+    background: none;
+    color: $accent-color;
+    text-decoration: underline;
+    appearance: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__button {
+    width: 300px;
+    margin: 35px auto 0;
+  }
+}

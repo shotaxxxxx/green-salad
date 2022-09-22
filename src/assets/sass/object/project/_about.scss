@@ -1,0 +1,144 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  About
+*/
+.p-about {
+  padding: 64px 0;
+  background-color: $main-color;
+
+  @include mq(lg) {
+    padding: 80px 0;
+  }
+
+  @include mq(xl) {
+    padding: 130px 0;
+  }
+
+  &__cards {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    @include mq(lg) {
+      width: 85%;
+    }
+  }
+
+  &__card {
+    margin-top: 56px;
+
+    @include mq(lg) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &.-reverse {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 32px;
+
+    @include mq(lg) {
+      width: 55%;
+      margin-left: 30px;
+      padding-bottom: 0;
+    }
+
+    @include mq(xxl) {
+      width: 52%;
+      margin-left: 67px;
+    }
+
+    &.-reverse {
+      @include mq(lg) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 3;
+    color: $secondary-text-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.45833;
+
+    @include mq(lg) {
+      font-size: 1.875rem;
+    }
+
+    > span {
+      color: $accent-color;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 3;
+    padding-top: 16px;
+    color: $secondary-text-color;
+    line-height: 1.5;
+
+    @include mq(lg) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    z-index: 1;
+    right: -10px;
+    bottom: -45px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: $font-en;
+    font-size: 11.25rem;
+    font-weight: 400;
+    line-height: 1;
+
+    @include mq(lg) {
+      right: 0;
+      bottom: -70px;
+      font-size: 15.625rem;
+    }
+
+    @include mq(xl) {
+      bottom: -90px;
+      font-size: 18rem;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 3;
+
+    @include mq(lg) {
+      width: 40%;
+      max-width: 450px;
+    }
+
+    @include mq(xxl) {
+      width: 42%;
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

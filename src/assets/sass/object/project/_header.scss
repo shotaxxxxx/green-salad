@@ -6,7 +6,25 @@
   Header
 */
 .p-header {
+  background-color: $base-color;
+
   &__inner {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+
+    @include mq(lg) {
+      padding: 14px 0;
+    }
+  }
+
+  &__title {
+    width: 55px;
+    line-height: 1;
+
+    @include mq(lg) {
+      width: 115px;
+    }
   }
 }

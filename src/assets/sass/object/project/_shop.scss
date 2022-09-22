@@ -1,0 +1,386 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Shop
+*/
+.p-shop {
+  padding: 64px 0;
+  background-color: $main-color;
+
+  @include mq(lg) {
+    padding: 80px 0;
+  }
+
+  @include mq(xl) {
+    padding: 120px 0;
+  }
+
+  &__wrapper {
+    width: 91.4667%;
+    margin: 0 auto;
+
+    @include mq(md) {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      width: 100%;
+      padding-top: 48px;
+    }
+
+    @include mq(lg) {
+      padding-top: 60px;
+    }
+
+    @include mq(xl) {
+      padding-top: 80px;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    margin-top: 56px;
+    aspect-ratio: 3 / 2;
+    filter: grayscale(100%);
+
+    @include mq(md) {
+      aspect-ratio: 96 / 31;
+    }
+
+    > iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    width: 93%;
+    margin: 0 auto;
+    padding-top: 56px;
+    color: $secondary-text-color;
+
+    @include mq(sm) {
+      width: 80%;
+    }
+
+    @include mq(md) {
+      width: 55%;
+      max-width: 430px;
+      padding-top: 0;
+    }
+
+    @include mq(lg) {
+      width: 48%;
+    }
+  }
+
+  &__title {
+    color: $secondary-text-color;
+    font-family: $font-en;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    @include mq(md) {
+      font-size: 1.75rem;
+      text-align: left;
+    }
+
+    @include mq(lg) {
+      font-size: 2rem;
+    }
+
+    > .-before {
+      font-size: 1.125rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    > .-after {
+      display: block;
+      font-family: $font-set-primary;
+      font-size: 1rem;
+      font-weight: 400;
+
+      @include mq(md) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__address {
+    padding-top: 24px;
+
+    @include mq(lg) {
+      font-size: 1.125rem;
+    }
+
+    p {
+      padding-top: 4px;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__def {
+    padding-top: 5px;
+    letter-spacing: 0.03em;
+
+    @include mq(md) {
+      padding-top: 17px;
+    }
+
+    @include mq(lg) {
+      font-size: 1.125rem;
+    }
+
+    &-tit {
+      width: 25%;
+
+      @include mq(md) {
+        width: 20%;
+      }
+    }
+
+    &-data {
+      width: 75%;
+
+      @include mq(md) {
+        width: 80%;
+      }
+
+      @include mq(lg) {
+        width: 75%;
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    line-height: 1.7;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__image {
+    padding-top: 40px;
+
+    @include mq(md) {
+      width: 43%;
+      padding-top: 0;
+    }
+
+    @include mq(lg) {
+      width: 50%;
+    }
+  }
+}
+
+.p-message {
+  width: 91.4667%;
+  max-width: 1146px;
+  margin: 0 auto;
+  padding-top: 58px;
+
+  @include mq(lg) {
+    padding-top: 60px;
+  }
+
+  @include mq(xl) {
+    padding-top: 80px;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 10px 10px 113px;
+    background-color: $primary-text-color;
+
+    @include mq(lg) {
+      padding: 30px 34px 80px;
+    }
+    @include mq(xl) {
+      padding: 30px 34px 42px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    flex-direction: column;
+
+    @include mq(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__left {
+    position: relative;
+
+    @include mq(md) {
+      width: 60%;
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 91%;
+      height: 91%;
+      transform: translate(-50%, -50%);
+      border: 1px solid $primary-text-color;
+    }
+  }
+
+  &__right {
+    position: relative;
+
+    @include mq(md) {
+      width: 40%;
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 91.5%;
+      height: 91%;
+      transform: translate(-50%, -50%);
+      border: 1px solid $primary-text-color;
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding-top: 24px;
+
+    @include mq(md) {
+      display: flex;
+    }
+
+    > .-top {
+      color: $secondary-text-color;
+      font-family: $font-en-secondary;
+      font-size: 1.875rem;
+      font-weight: 400;
+
+      @include mq(md) {
+        width: 20%;
+      }
+
+      @include mq(lg) {
+        font-size: 2.25rem;
+      }
+      @include mq(xl) {
+        font-size: 3rem;
+      }
+    }
+
+    > .-middle {
+      background-color: transparent;
+      background-image: linear-gradient(
+        180deg,
+        transparent 0%,
+        transparent 97%,
+        $message-border 97%,
+        $message-border 100%
+      );
+      background-size: 100% 2.5em;
+      color: #4f4f4f;
+      line-height: 2.5em;
+
+      @include mq(md) {
+        width: 80%;
+      }
+
+      @include mq(lg) {
+        width: 70%;
+        margin-left: 30px;
+      }
+
+      @include mq(xl) {
+        width: 60%;
+      }
+    }
+
+    > .-bottom {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      bottom: -55px;
+      transform: rotate(-10deg);
+      color: $accent-color;
+      font-family: $font-en-secondary;
+      font-size: 2.25rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+
+      @include mq(lg) {
+        bottom: -35px;
+        font-size: 2.5rem;
+      }
+
+      @include mq(xl) {
+        bottom: 0;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $accent-color;
+      }
+
+      &::before {
+        bottom: 3px;
+      }
+
+      &::after {
+        bottom: 7px;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: -40px;
+    left: -16px;
+    width: 112px;
+
+    @include mq(lg) {
+      top: -50px;
+      left: -45px;
+      width: 200px;
+    }
+
+    @include mq(xxl) {
+      top: -70px;
+      left: -100px;
+      width: 288px;
+    }
+  }
+}

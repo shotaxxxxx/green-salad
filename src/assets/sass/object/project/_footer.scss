@@ -7,4 +7,145 @@
 */
 .p-footer {
   position: relative;
+  background-color: $main-color;
+
+  &__inner {
+    padding-top: 48px;
+    padding-bottom: 10px;
+
+    @include mq(lg) {
+      padding-top: 56px;
+    }
+  }
+
+  &__sns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 230px;
+    margin: 0 auto;
+
+    .p-sns__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+      border-radius: 9999px;
+      background-color: $base-color;
+      cursor: pointer;
+
+      > .fa-twitter {
+        transition: color 0.3s ease-in-out;
+        font-size: 2rem;
+      }
+
+      > .fa-instagram {
+        font-size: 1.8rem;
+      }
+
+      > .fa-tiktok {
+        font-size: 1.55rem;
+      }
+
+      &:hover {
+        border: 1px solid $base-color;
+        background-color: $primary-text-color;
+
+        > .fa-twitter {
+          color: $base-color;
+        }
+
+        > .fa-instagram {
+          color: $base-color;
+        }
+
+        > .fa-tiktok {
+          color: $base-color;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    width: 165px;
+    margin: 26px auto 0;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__copyright {
+    margin-top: 30px;
+    color: $secondary-text-color;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    > small {
+      font-size: 0.75rem;
+    }
+
+    > a {
+      color: $secondary-text-color;
+    }
+  }
+}
+
+.p-footerNav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 290px;
+  margin: 40px auto 0;
+
+  &__item {
+    font-family: $font-en;
+    letter-spacing: 0.03em;
+
+    @include mq(lg) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding: 8px 0;
+    color: $secondary-text-color;
+
+    &:hover {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $accent-color;
+      }
+    }
+  }
+}
+
+.p-pageTop {
+  position: absolute;
+  z-index: 5;
+  right: 16px;
+  bottom: 305px;
+  width: 70px;
+
+  @include mq(lg) {
+    width: 100px;
+  }
+
+  @include mq(xl) {
+    width: 120px;
+  }
+
+  > a {
+    display: block;
+  }
 }

@@ -17,10 +17,33 @@
     display: inline-block;
   }
 
-  &.-md {
-    @include mq(md) {
-      display: inline-block;
+  &.-sm {
+    display: block;
+
+    @include mq(sm) {
+      display: none;
     }
+  }
+
+  &.-md {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &.-lg {
+    display: none;
+
+    @include mq(lg) {
+      display: block;
+    }
+  }
+
+  &.-reverselg {
+    display: block;
+
     @include mq(lg) {
       display: none;
     }

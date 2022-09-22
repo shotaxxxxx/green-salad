@@ -8,4 +8,199 @@
 .p-hero {
   $this: &;
   position: relative;
+  overflow: hidden;
+  background-color: $base-color;
+
+  &__content {
+    padding-bottom: 64px;
+
+    @include mq(lg) {
+      padding-bottom: 80px;
+    }
+
+    @include mq(xl) {
+      padding-bottom: 110px;
+    }
+  }
+
+  &__top {
+    position: relative;
+  }
+
+  &__copy {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-family: $font-en;
+    font-size: 2.25rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.194;
+
+    @include mq(md) {
+      font-size: 3.5rem;
+    }
+    @include mq(lg) {
+      left: 12%;
+      font-size: 5rem;
+    }
+
+    @include mq(xl) {
+      font-size: 6.25rem;
+    }
+
+    > .-color {
+      color: $accent-color;
+    }
+
+    > .-small {
+      display: block;
+      margin-top: 15px;
+      font-family: $font-set-primary;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+
+      @include mq(md) {
+        font-size: 1.25rem;
+      }
+
+      @include mq(lg) {
+        font-size: 1.75rem;
+      }
+
+      @include mq(xl) {
+        font-size: 2rem;
+      }
+
+      > .-bgcolor {
+        display: block;
+        margin-top: 8px;
+        padding: 5px 3px;
+        background-color: $accent-color;
+        text-align: center;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 82.133334%;
+    margin-left: auto;
+
+    @include mq(lg) {
+      width: 75%;
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 3;
+    margin-top: 48px;
+
+    @include mq(lg) {
+      margin-top: 80px;
+    }
+
+    @include mq(xl) {
+      margin-top: 120px;
+    }
+  }
+
+  &__subcopy {
+    width: 82.9333%;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+
+    @include mq(lg) {
+      font-size: 1.875rem;
+    }
+
+    > span {
+      display: block;
+      margin-top: 24px;
+      font-size: 1rem;
+      font-weight: 400;
+
+      @include mq(lg) {
+        font-size: 1.25rem;
+      }
+
+      @include mq(xl) {
+        margin-top: 48px;
+      }
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    z-index: 1;
+    right: -7px;
+    bottom: -16px;
+    color: rgba(103, 103, 103, 0.3);
+    font-family: $font-en;
+    font-size: 6.875rem;
+    letter-spacing: 0.03em;
+    line-height: 0.8;
+    text-align: right;
+
+    @include mq(sm) {
+      bottom: -28px;
+      left: 0;
+      left: -15px;
+      font-size: 7rem;
+      letter-spacing: normal;
+      line-height: 1;
+      text-align: left;
+    }
+
+    @include mq(md) {
+      bottom: -40px;
+      left: -25px;
+      font-size: 10rem;
+    }
+
+    @include mq(lg) {
+      bottom: -50px;
+      left: -30px;
+      font-size: 12.5rem;
+    }
+
+    @include mq(xl) {
+      bottom: -60px;
+      left: -35px;
+      font-size: 15rem;
+    }
+
+    @include mq(xxl) {
+      bottom: -70px;
+      left: -40px;
+      font-size: 17.5rem;
+    }
+
+    > span {
+      display: block;
+
+      @include mq(sm) {
+        display: inline;
+        margin-right: 50px;
+      }
+
+      @include mq(lg) {
+        margin-right: 80px;
+      }
+
+      @include mq(xxl) {
+        margin-right: 100px;
+      }
+    }
+  }
 }
