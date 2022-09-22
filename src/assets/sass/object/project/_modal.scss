@@ -28,13 +28,10 @@
   &__container {
     position: relative;
     z-index: 5;
-    // top: 50%;
-    // left: 50%;
     width: 90%;
     height: 500px;
     margin: 0 auto;
     overflow-y: scroll;
-    // transform: translate(-50%, -50%);
     background-color: $primary-text-color;
   }
 

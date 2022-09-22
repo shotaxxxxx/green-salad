@@ -41,7 +41,9 @@
     }
 
     &:last-child {
-      margin-right: 38px;
+      @include mq(md) {
+        margin-right: 38px;
+      }
     }
   }
 

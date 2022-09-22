@@ -27,8 +27,8 @@
     />
     <link rel="stylesheet" href="assets/css/common.css" />
     <script src="https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js"></script>
-    <script src="https://kit.fontawesome.com/600eb8a488.js" crossorigin="anonymous"></script>
-    <!-- <script src="node_modules/luxy.js/dist/js/luxy.min.js"></script> -->
+    <script src="https://kit.fontawesome.com/600eb8a488.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
   </head>
   <body>
     <header class="l-header p-header">
@@ -113,7 +113,7 @@
             About
           </h2>
           <ul class="p-about__cards">
-            <li class="p-about__card">
+            <li class="p-about__card c-inview" data-type="slideDownIn" data-duration="slow">
               <div class="p-about__body">
                 <h3 class="p-about__title">全ての食材が安心の<span>国産</span></h3>
                 <p class="p-about__text">
@@ -135,7 +135,7 @@
               </p>
               <!-- /.p-about__image -->
             </li>
-            <li class="p-about__card -reverse">
+            <li class="p-about__card -reverse c-inview" data-type="slideDownIn" data-duration="slow">
               <div class="p-about__body -reverse">
                 <h3 class="p-about__title">カスタム可能で<br />その組み合わせは<span>全400種類</span>！</h3>
                 <p class="p-about__text">
@@ -157,7 +157,7 @@
               </p>
               <!-- /.p-about__image -->
             </li>
-            <li class="p-about__card">
+            <li class="p-about__card c-inview" data-type="slideDownIn" data-duration="slow">
               <div class="p-about__body">
                 <h3 class="p-about__title">
                   <span>ジムトレーナー監修の</span><br class="u-break -reverselg" />メニュー
@@ -183,8 +183,8 @@
         </div>
         <!-- /.l-container -->
       </section>
-      <section class="l-spacer p-parallax" id="luxy">
-        <picture class="p-parallax__image luxy-el">
+      <section class="l-spacer p-image">
+        <picture class="p-image__image">
           <source
             media="(max-width: 576px)"
             srcset="assets/img/common/menu-top_sp.png, assets/img/common/menu-top_sp@2x.png 2x"
@@ -209,7 +209,7 @@
               <li class="p-menu__item">C : 糖質</li>
             </ul>
             <div class="p-menu__cards">
-              <div class="p-menu__card -row">
+              <div class="p-menu__card -row c-inview" data-type="slideDownIn" data-duration="slow">
                 <div class="p-menu__body -row">
                   <div class="p-menu__content">
                     <div class="p-menu__recommend">
@@ -245,7 +245,7 @@
               </div>
               <!-- /.p-menu-card -->
               <div class="p-menu__cardBottom">
-                <div class="p-menu__card">
+                <div class="p-menu__card c-inview" data-type="slideDownIn" data-duration="slow">
                   <div class="p-menu__body">
                     <div class="p-menu__content">
                       <h3 class="p-menu__title">アボガドサラダ</h3>
@@ -273,7 +273,7 @@
                   <!-- /.p-menu__image -->
                 </div>
                 <!-- /.p-menu-card -->
-                <div class="p-menu__card">
+                <div class="p-menu__card c-inview" data-type="slideDownIn" data-duration="slow">
                   <div class="p-menu__body">
                     <div class="p-menu__content">
                       <h3 class="p-menu__title">チキンサラダ</h3>
@@ -310,45 +310,44 @@
                   <div class="p-sns__label">Instagram</div>
                   <p class="p-sns__text">Instagramにはさらに詳しいメニュー内容などを載せています！</p>
                   <div class="p-sns__content">
-                    <div class="p-sns__image">
-                      <img
-                        src="assets/img/common/instagram1.png"
-                        srcset="assets/img/common/instagram1.png, assets/img/common/instagram1@2x.png 2x"
-                        alt=""
-                      />
+                    <div class="p-sns__imageWrapper">
+                      <div class="p-sns__image">
+                        <img
+                          src="assets/img/common/instagram1.png"
+                          srcset="assets/img/common/instagram1.png, assets/img/common/instagram1@2x.png 2x"
+                          alt=""
+                        />
+                      </div>
+                      <div class="p-sns__image">
+                        <img
+                          src="assets/img/common/instagram2.png"
+                          srcset="assets/img/common/instagram2.png, assets/img/common/instagram2@2x.png 2x"
+                          alt=""
+                        />
+                      </div>
+                      <div class="p-sns__image">
+                        <img
+                          src="assets/img/common/instagram3.png"
+                          srcset="assets/img/common/instagram3.png, assets/img/common/instagram3@2x.png 2x"
+                          alt=""
+                        />
+                      </div>
+                      <div class="p-sns__image">
+                        <img
+                          src="assets/img/common/instagram4.png"
+                          srcset="assets/img/common/instagram4.png, assets/img/common/instagram4@2x.png 2x"
+                          alt=""
+                        />
+                      </div>
+                      <!-- /.p-sns__image -->
                     </div>
-                    <!-- /.p-sns__image -->
-                    <div class="p-sns__image">
-                      <img
-                        src="assets/img/common/instagram2.png"
-                        srcset="assets/img/common/instagram2.png, assets/img/common/instagram2@2x.png 2x"
-                        alt=""
-                      />
-                    </div>
-                    <!-- /.p-sns__image -->
-                    <div class="p-sns__image">
-                      <img
-                        src="assets/img/common/instagram3.png"
-                        srcset="assets/img/common/instagram3.png, assets/img/common/instagram3@2x.png 2x"
-                        alt=""
-                      />
-                    </div>
-                    <!-- /.p-sns__image -->
-                    <div class="p-sns__image">
-                      <img
-                        src="assets/img/common/instagram4.png"
-                        srcset="assets/img/common/instagram4.png, assets/img/common/instagram4@2x.png 2x"
-                        alt=""
-                      />
-                    </div>
-                    <!-- /.p-sns__image -->
+                    <!-- /.p-sns__imageWrapper -->
                   </div>
                   <!-- /.p-sns__content -->
                   <p class="p-sns__id">ID：tf_gardensalad</p>
                   <p class="p-sns__button">
                     <a href="" class="c-button -icon">
                       もっとメニューを見る
-                      <!-- <span><img src="assets/img/common/btn-logo.png" alt="" /></span> -->
                     </a>
                   </p>
                 </div>
@@ -362,8 +361,8 @@
         </div>
         <!-- /.p-menu__inner -->
       </section>
-      <section class="l-spacer p-parallax">
-        <p class="p-parallax__image">
+      <section class="l-spacer p-image -bottom">
+        <p class="p-image__image">
           <img
             src="assets/img/common/menu-bottom.png"
             alt=""
@@ -426,7 +425,7 @@
           </p>
         </div>
         <!-- /.p-shop__wrapper -->
-        <div class="p-message">
+        <div class="p-message c-inview" data-duration="slow" data-type="slideDownIn">
           <div class="p-message__wrapper">
             <div class="p-message__image">
               <picture class="p-message__left">
@@ -704,14 +703,11 @@
         <a href="#"><img src="assets/img/common/page-top.png" alt="" /></a>
       </div>
     </footer>
-    <!-- <div class="p-bgMask" data-micromodal-close></div> -->
-    <!-- <script charset="utf-8">
-        luxy.init();
-    </script> -->
-    <script>
+    <script defer>
       MicroModal.init({
         disableScroll: true,
       });
+      var rellax = new Rellax(".js-rellax");
     </script>
   </body>
 </html>

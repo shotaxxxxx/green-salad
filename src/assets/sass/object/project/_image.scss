@@ -5,9 +5,14 @@
 /*
   Parallax
 */
-.p-parallax {
+.p-image {
+  @include mq(md) {
+    height: 450px;
+  }
+
   &__image {
     display: block;
+    height: 100%;
 
     > img {
       width: 100%;

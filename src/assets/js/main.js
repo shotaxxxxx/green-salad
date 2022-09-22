@@ -8,18 +8,16 @@ closetPolyfill();
 // Libraly
 import Loading from "./lib/Loading";
 // import $ from "jquery";
-// import Swiper from "swiper";
+// import Swiper from "swiper/bundle";
 // import SmoothScroll from "smooth-scroll";
-// import ScrollObserver from './lib/ScrollObserver';
+import ScrollObserver from "./lib/ScrollObserver";
 // import Toggle from "./lib/Toggle";
 // import Close from "./lib/Close";
 // import Slider from "./lib/Slider";
 // import { dropdown } from './lib/dropdown';
-// import { inview } from './lib/inview';
-// import Luxy from "luxy";
+import { inview } from "./lib/inview";
 
-// new Swiper();
-// new Luxy();
 new Loading();
 // new SmoothScroll('a[href*="#"]');
 // new Toggle(".js-drawer");
+new ScrollObserver(".c-inview", inview);
