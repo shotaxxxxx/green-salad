@@ -92,6 +92,10 @@
       margin-left: 40px;
       // list-style-type: disc;
       list-style: decimal;
+
+      > .-decoNone {
+        list-style: none;
+      }
     }
 
     li {

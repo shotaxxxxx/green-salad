@@ -42,16 +42,16 @@
             <h2 class="u-visuallyHidden">サイト内メニュー</h2>
             <ul class="p-globalNav">
               <li class="p-globalNav__item">
-                <a href="" class="p-globalNav__link" lang="en">About</a>
+                <a href="#about" class="p-globalNav__link" lang="en">About</a>
               </li>
               <li class="p-globalNav__item">
-                <a href="" class="p-globalNav__link" lang="en">Menu</a>
+                <a href="#menu" class="p-globalNav__link" lang="en">Menu</a>
               </li>
               <li class="p-globalNav__item">
-                <a href="" class="p-globalNav__link">Shop</a>
+                <a href="#shop" class="p-globalNav__link">Shop</a>
               </li>
               <li class="p-globalNav__item">
-                <a href="" class="p-globalNav__link">Contact</a>
+                <a href="#contact" class="p-globalNav__link">Contact</a>
               </li>
             </ul>
           </nav>
@@ -106,7 +106,7 @@
       </div>
       <!-- /.p-hero -->
 
-      <section class="l-spacer p-about">
+      <section class="l-spacer p-about" id="about">
         <div class="l-container">
           <h2 class="c-heading">
             <span class="c-heading__lead">Garden Saladのこだわり</span>
@@ -183,7 +183,7 @@
         </div>
         <!-- /.l-container -->
       </section>
-      <section class="l-spacer p-image">
+      <div class="l-spacer p-image">
         <picture class="p-image__image">
           <source
             media="(max-width: 576px)"
@@ -195,8 +195,8 @@
             srcset="assets/img/common/menu-top.png, assets/img/common/menu-top@2x.png 2x"
           />
         </picture>
-      </section>
-      <section class="l-spacer p-menu">
+      </div>
+      <section class="l-spacer p-menu" id="menu">
         <div class="p-menu__inner">
           <div class="p-menu__contents">
             <h2 class="c-heading -color">
@@ -346,7 +346,7 @@
                   <!-- /.p-sns__content -->
                   <p class="p-sns__id">ID：tf_gardensalad</p>
                   <p class="p-sns__button">
-                    <a href="" class="c-button -icon">
+                    <a href="#" class="c-button -icon">
                       もっとメニューを見る
                     </a>
                   </p>
@@ -361,7 +361,7 @@
         </div>
         <!-- /.p-menu__inner -->
       </section>
-      <section class="l-spacer p-image -bottom">
+      <div class="l-spacer p-image -bottom">
         <p class="p-image__image">
           <img
             src="assets/img/common/menu-bottom.png"
@@ -369,8 +369,8 @@
             srcset="assets/img/common/menu-bottom.png, assets/img/common/menu-bottom@2x.png 2x"
           />
         </p>
-      </section>
-      <section class="l-spacer p-shop">
+      </div>
+      <section class="l-spacer p-shop" id="shop">
         <h2 class="c-heading">
           <span class="c-heading__lead">店舗情報</span>
           Shop
@@ -435,7 +435,7 @@
                 />
                 <img
                   src="assets/img/common/shop2.png"
-                  srcset="assets/img/common/shop2.png, assets/img/common/shop2@2x.png"
+                  srcset="assets/img/common/shop2.png, assets/img/common/shop2@2x.png 2x"
                   alt=""
                 />
               </picture>
@@ -473,14 +473,14 @@
         </div>
         <!-- /.p-message -->
       </section>
-      <section class="l-spacer p-contact">
+      <section class="l-spacer p-contact" id="contact">
         <div class="p-contact__wrapper">
           <h2 class="c-heading">
             <span class="c-heading__lead">お問い合わせ</span>
             Contact
           </h2>
           <p class="p-contact__text">ご質問などは、下記のフォームよりお問い合わせください。</p>
-          <form action="" class="p-contact__form">
+          <form action="#" class="p-contact__form">
             <dl class="p-contact__def">
               <dt class="p-contact__def--tit"><label for="name">お名前</label><span class="-require">必須</span></dt>
               <dd class="p-contact__def--data">
@@ -510,14 +510,11 @@
               </dd>
             </dl>
             <div class="p-contact__check">
-              <label>
-                <input type="checkbox" name="agree" value="同意します" />
-                <span
-                  ><button type="button" class="p-contact__link" data-micromodal-trigger="modal-1">
-                    プライバシーポリシー</button
-                  >に同意する</span
-                >
+              <label><input type="checkbox" name="agree" value="同意します" />
+                <span></span>
               </label>
+              <button type="button" class="p-contact__link" data-micromodal-trigger="modal-1">
+                    プライバシーポリシー</button>に同意する
             </div>
             <!-- /.p-contact__check -->
             <div class="p-contact__button">
@@ -587,13 +584,15 @@
                       国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき
                     </li>
                     <li>予め次の事項を告知あるいは公表し，かつ当サイトが個人情報保護委員会に届出をしたとき</li>
-                    <ul>
-                      <li>利用目的に第三者への提供を含むこと</li>
-                      <li>第三者に提供されるデータの項目</li>
-                      <li>第三者への提供の手段または方法</li>
-                      <li>本人の求めに応じて個人情報の第三者への提供を停止すること</li>
-                      <li>本人の求めを受け付ける方法</li>
-                    </ul>
+                    <li class="-decoNone">
+                      <ul>
+                        <li>利用目的に第三者への提供を含むこと</li>
+                        <li>第三者に提供されるデータの項目</li>
+                        <li>第三者への提供の手段または方法</li>
+                        <li>本人の求めに応じて個人情報の第三者への提供を停止すること</li>
+                        <li>本人の求めを受け付ける方法</li>
+                      </ul>
+                    </li>
                   </ul>
                   <p>前項の定めにかかわらず，次に掲げる場合には，当該情報の提供先は第三者に該当しないものとします。</p>
                   <ul>
@@ -659,19 +658,19 @@
         <!-- /.p-modal -->
       </section>
     </main>
-    <footer class="l-footer p-footer">
+    <footer class="l-footer p-footer" id="footer">
       <div class="l-container">
         <div class="p-footer__inner">
           <div class="p-footer__sns">
-            <a class="p-sns__icon">
+            <a href="#" class="p-sns__icon">
               <i class="fa-brands fa-twitter"></i>
             </a>
             <!-- /.p-sns__icon -->
-            <a class="p-sns__icon">
+            <a href="#" class="p-sns__icon">
               <i class="fa-brands fa-instagram"></i>
             </a>
             <!-- /.p-sns__icon -->
-            <a class="p-sns__icon">
+            <a href="#" class="p-sns__icon">
               <i class="fa-brands fa-tiktok"></i>
             </a>
             <!-- /.p-sns__icon -->
@@ -679,16 +678,16 @@
           <!-- /.p-footer__sns -->
           <ul class="p-footerNav">
             <li class="p-footerNav__item">
-              <a href="" class="p-footerNav__link">About</a>
+              <a href="#about" class="p-footerNav__link">About</a>
             </li>
             <li class="p-footerNav__item">
-              <a href="" class="p-footerNav__link">Menu</a>
+              <a href="#menu" class="p-footerNav__link">Menu</a>
             </li>
             <li class="p-footerNav__item">
-              <a href="" class="p-footerNav__link">Shop</a>
+              <a href="#shop" class="p-footerNav__link">Shop</a>
             </li>
             <li class="p-footerNav__item">
-              <a href="" class="p-footerNav__link">Contact</a>
+              <a href="#contact" class="p-footerNav__link">Contact</a>
             </li>
           </ul>
           <div class="p-footer__logo">
@@ -703,7 +702,7 @@
         <a href="#"><img src="assets/img/common/page-top.png" alt="" /></a>
       </div>
     </footer>
-    <script defer>
+    <script>
       MicroModal.init({
         disableScroll: true,
       });
